@@ -1,26 +1,76 @@
+// bringing in react from npm package.JSON
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import ElementList from './ElementList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Define our App component calss
+class App extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state ={
+      userSearch : "" ,
+      ListOfElement : {} ,
+      elementNumberOne : []
+    }
+
+  }
+
+  handelSearchChange =(e) => {
+     
+    let textValue = e.target.value;
+
+    if(textValue.includes(" ")){
+    
+      textValue = textValue.replace(" ", "%20");
+
+    }
+else {
+   
+     this.setState ({
+
+      userSearch : textValue
+       
+     })
+      
+  }}
+
+  Search() {
+    axios.get(`https://api.edamam.com/api/food-database/parser?nutrition-type=logging&app_id=865851b7&app_key=5c70970d448fba3e868462bea11f3476&ingr=${this.state.userSearch}`)
+      .then(res => {
+
+        console.log(res.data)
+        // console.log(res.data.parsed[0].food.nutrients.ENERC_KCAL)
+        this.setState({
+          ListOfElement : res.data ,
+          elementNumberOne : res.data.parsed[0] , 
+        })
+       
+      })
+      .catch(function (error) {
+        // handle error
+        alert(" write something to search !! ");
+      })
+  }
+
+// What should the component render 
+render(){
+
+  
+
+return (
+  <div>
+      <h2>search to know the calories of the food </h2> 
+      <input type="text" onChange={this.handelSearchChange}/>
+      <button type="button" onClick={() => this.Search()}> Search </button>
+       <ElementList  ListOfElement={this.state.ListOfElement} elementNumberOne={this.state.elementNumberOne}/>
+        
+    
+      </div>
+)
 }
 
+}
+
+// let's export the class to be used by another file
 export default App;
