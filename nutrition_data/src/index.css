@@ -3,3 +3,17 @@ input {
 border: 1px solid black;
 
 }
+
+
+img{
+
+    width: 50px;
+
+}
+
+.fovoritImg img{
+
+width: 35px;
+
+
+}

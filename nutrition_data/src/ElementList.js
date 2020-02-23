@@ -11,9 +11,9 @@ render(){
    
   return (
 <div>
-    <h3> Element list work </h3>
+    
   <h4>{this.props.ListOfElement.text}</h4>
- <PrintFirstElement firstElement={this.props.ListOfElement.parsed} />
+ <PrintFirstElement  firstElement={this.props.ListOfElement.hints} />
 
 </div>
   )

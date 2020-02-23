@@ -10,8 +10,9 @@ class App extends React.Component{
     super(props);
     this.state ={
       userSearch : "" ,
-      ListOfElement : {} ,
-      elementNumberOne : []
+      ListOfElement : {} , 
+      theState : false ,
+     
     }
 
   }
@@ -43,7 +44,7 @@ else {
         // console.log(res.data.parsed[0].food.nutrients.ENERC_KCAL)
         this.setState({
           ListOfElement : res.data ,
-          elementNumberOne : res.data.parsed[0] , 
+          theState : true ,
         })
        
       })
@@ -55,17 +56,18 @@ else {
 
 // What should the component render 
 render(){
-
   
 
+
+   if (this.state.theState === true){
+   return <ElementList  ListOfElement={this.state.ListOfElement}/>}
+   
 return (
   <div>
       <h2>search to know the calories of the food </h2> 
       <input type="text" onChange={this.handelSearchChange}/>
       <button type="button" onClick={() => this.Search()}> Search </button>
-       <ElementList  ListOfElement={this.state.ListOfElement} elementNumberOne={this.state.elementNumberOne}/>
         
-    
       </div>
 )
 }
