@@ -41,11 +41,11 @@ class GetFood extends React.Component{
 render(){
 
 
+  let iconURL = require('../src/before.png');
+
   if(this.state.state === true){
-
-    return <Favors  Array={this.state.faves} />
+      iconURL = require('../src/after.png');
   }
-
   
  
 
@@ -58,7 +58,7 @@ render(){
            <p> cal : {this.state.element.nutrients.ENERC_KCAL} </p>
            
           <div className="fovoritImg">
-             <img onClick={() => this.addToFovorit()} src={require('../src/before.png')}/>
+             <img onClick={() => this.addToFovorit()} src={iconURL}/>
              <img   src={require('../src/kcal.png')}/>
              </div>
              </div>
