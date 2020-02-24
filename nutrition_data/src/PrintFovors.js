@@ -12,9 +12,9 @@ render(){
         <div>
           
           <h1>  list :  </h1>
-          <h1> foverit {this.props.element.label}</h1>
-          <h4>foverit {this.props.element.brand}</h4>
-          <h4>foverit {this.props.element.nutrients.ENERC_KCAL}</h4>
+          <p> foverit {this.props.element.label}</p>
+          <p>foverit {this.props.element.brand}</p>
+          <p>foverit {this.props.element.nutrients.ENERC_KCAL}</p>
          </div>
           )
     }

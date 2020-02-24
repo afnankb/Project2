@@ -58,7 +58,7 @@ render(){
     return (
         <div>
           
-          <h1> my fovorit list :  </h1>
+          
         <img onClick={() => this.removeAll()} src={require('../src/removeAll.png') } />
           {fovoritElement}
         <img onClick={() => this.remove(this.state.fovoritArray)}  src={this.state.img}/>

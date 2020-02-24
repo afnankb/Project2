@@ -1,5 +1,5 @@
 import React from 'react';
-import Addcal from './Addcal';
+
 import Favors from './Favors';
 
 class GetFood extends React.Component{
@@ -11,7 +11,7 @@ class GetFood extends React.Component{
         element : this.props.firstElementArray ,
         state : false ,
         faves : [] ,
-        stateCal : false
+        
       
     }
 
@@ -36,18 +36,6 @@ class GetFood extends React.Component{
 
 
 
-    calculateCal(){
-
-   console.log("clicked cal button ")
-   console.log(this.state.element.nutrients.ENERC_KCAL)
-      
-   this.setState({
-
-    stateCal : true
-
-   })
-
-    }
 
 
 render(){
@@ -58,25 +46,22 @@ render(){
     return <Favors  Array={this.state.faves} />
   }
 
-  if(this.state.stateCal === true){
-
-    return <Addcal  calorus={this.state.element.nutrients.ENERC_KCAL} />
-  }
-
+  
  
 
      
     return (
         <div>
+           <div className="element"> 
+           <p> name : {this.state.element.label}</p>   
+           <p> brand : {this.state.element.brand}</p>
+           <p> cal : {this.state.element.nutrients.ENERC_KCAL} </p>
            
-           <h4> name : {this.state.element.label}</h4>   
-           <h4> brand : {this.state.element.brand}</h4>
-           <h4> cal : {this.state.element.nutrients.ENERC_KCAL} </h4>
-
           <div className="fovoritImg">
              <img onClick={() => this.addToFovorit()} src={require('../src/before.png')}/>
+             <img   src={require('../src/kcal.png')}/>
              </div>
-             <img  onClick={() => this.calculateCal()}  src={require('../src/kcal.png')}/>
+             </div>
              <br/>
               
 

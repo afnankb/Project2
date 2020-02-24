@@ -12,7 +12,7 @@ render(){
   return (
 <div>
     
-  <h4>{this.props.ListOfElement.text}</h4>
+  
  <PrintFirstElement  firstElement={this.props.ListOfElement.hints} />
 
 </div>
