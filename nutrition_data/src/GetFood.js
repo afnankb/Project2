@@ -26,6 +26,17 @@ class GetFood extends React.Component{
    })
 
    }
+
+   addToCal  = e => {
+
+    this.props.handleCalToggle(this.state.element.nutrients.ENERC_KCAL);
+   
+
+   }
+
+
+
+   
   
 
 render(){
@@ -47,7 +58,7 @@ render(){
            
           <div className="fovoritImg">
              <img onClick={() => this.addToFovorit()} src={iconURL}/>
-             <img   src={require('../src/kcal.png')}/>
+             <img  onClick={() => this.addToCal()} src={require('../src/kcal.png')}/>
              </div>
              </div>
              <br/>

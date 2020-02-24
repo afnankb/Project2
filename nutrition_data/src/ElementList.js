@@ -13,7 +13,8 @@ render(){
 <div>
     
 
- <PrintFirstElement  firstElement={this.props.ListOfElement.hints} handleFaveToggle={this.props.handleFaveToggle}   />
+ <PrintFirstElement  firstElement={this.props.ListOfElement.hints} handleFaveToggle={this.props.handleFaveToggle} 
+ handleCalToggle={this.props.handleCalToggle}  />
 
 </div>
   )

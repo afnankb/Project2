@@ -8,7 +8,7 @@ console.log(this.props)
 
     const theFirstElement = this.props.firstElement.map((first,index )=>{
 
-         return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} />)
+         return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} handleCalToggle={this.props.handleCalToggle} />)
     })
          
 

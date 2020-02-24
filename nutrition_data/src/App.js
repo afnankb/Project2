@@ -12,7 +12,8 @@ class App extends React.Component{
       userSearch : "" ,
       ListOfElement : {} , 
       theState : false ,
-     fav:[]
+      fav:[] ,
+     cal : []
     }
 
   }
@@ -62,22 +63,34 @@ else {
     faves.push(food);
     // let newArray=[]
     // newArray.push(objIng)
-    this.setState({ faves :faves });
-    
-
+    this.setState({ fav : faves });
+    console.log(this.state.fav)
   }
+
+  handleCalToggle=(calo)=>{
+    const clories = [...this.state.cal];
+     console.log('the elment ',calo)
+     clories.push(calo);
+    // let newArray=[]
+    // newArray.push(objIng)
+    this.setState({ cal : clories });
+    console.log(this.state.cal)
+  }
+
+
+
 // What should the component render 
 render(){
   
 
 
    if (this.state.theState === true){
-   return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle}/>
+   return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} handleCalToggle={this.handleCalToggle}/>
   }
    
 return (
   <div>
-      <h2>search to know the calories of the food </h2> 
+      <h2> Search to know the calories of the food </h2> 
       <input type="text" onChange={this.handelSearchChange}/>
       <button type="button" onClick={() => this.Search()}> Search </button>
         
