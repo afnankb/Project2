@@ -7,7 +7,8 @@ class ElementList extends React.Component{
 constructor(props){
 super(props)
 this.state ={
-  fovoritListClick : false 
+  fovoritListClick : false  ,
+  calorisListClick : false
 
 }
 
@@ -24,6 +25,18 @@ this.state ={
 
   }
 
+  clickcalorisList(){
+
+    this.setState({
+    
+      calorisListClick : true
+           
+     })
+
+
+  }
+
+
 
 render(){
 
@@ -33,11 +46,11 @@ render(){
 <div>
     <div className='foveritAndTotal'>
 <button type="button" onClick={() => this.clickFoveritList()} > foverit list  </button>
-<button type="button" > total calorus </button>
+<button type="button" onClick={() => this.clickcalorisList()}  > total calorus </button>  
 </div>
  <PrintFirstElement  firstElement={this.props.ListOfElement.hints} handleFaveToggle={this.props.handleFaveToggle} 
  handleCalToggle={this.props.handleCalToggle} fovoritListClick={this.state.fovoritListClick}
- favorit={this.props.faves}/>
+ favorit={this.props.faves} caloris={this.props.caloris} calorisListClick={this.state.calorisListClick} />
 
 </div>
   )

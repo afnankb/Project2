@@ -1,6 +1,7 @@
 import React from 'react';
 import GetFood from './GetFood';
 import Foverit from './foverit';
+import Calories from './calories'
 class printFirstElement extends React.Component{
 
   
@@ -9,6 +10,7 @@ render(){
     let theFirstElement = ""
     let theFoveritElement = ""
     let allItem = ""
+    let total = 0
 
     if(this.props.fovoritListClick === true){
          console.log("fhgfgfhvgc")
@@ -19,15 +21,34 @@ render(){
             return ( <Foverit firstElementArray={theElment}  key={index}   />)
          })
 
+    
 
     }
-    else{
+
+
+
+    else if (this.props.calorisListClick === true){
+        console.log("first "+total)
+        total = this.props.caloris.reduce((firstNumber , secondNumber)=> firstNumber+secondNumber)
+    
+        console.log("last "+total)
+
+              return  (<Calories  TheCalories={total}/>)
+     }
+
+
+
+
+    else {
                          allItem = this.props.firstElement.map((first,index )=>{
 
          return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} handleCalToggle={this.props.handleCalToggle} />)
     })
        
      }
+
+
+     
 
 
 
@@ -46,7 +67,7 @@ render(){
 
             <div className="contener">
             {theFirstElement}
-            
+          
             </div>
                    
          </div>

@@ -77,12 +77,7 @@ else {
     this.setState({ cal : clories });
     console.log(this.state.cal)
     
-  //  let total = 0 ;
-  //  const totalCal = this.state.cal.map((cal,index )=>{
-  //    total =+cal;
-  // })
   
-  // console.log("the total calories is "+total)
 
   }
 
@@ -96,7 +91,7 @@ render(){
 
    if (this.state.theState === true){
    return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} 
-   handleCalToggle={this.handleCalToggle} faves={this.state.fav}/>
+   handleCalToggle={this.handleCalToggle} faves={this.state.fav}  caloris={this.state.cal}/>
   }
    
 return (
