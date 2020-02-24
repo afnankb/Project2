@@ -10,8 +10,7 @@ class GetFood extends React.Component{
     this.state = {
         element : this.props.firstElementArray ,
         state : false ,
-        
-        
+         
       
     }
 
@@ -41,6 +40,7 @@ class GetFood extends React.Component{
 
 render(){
 
+     console.log("inside get "+this.props.firstElementArray.label)
   // console.log()
   let iconURL = require('../src/before.png');
 

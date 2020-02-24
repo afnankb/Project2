@@ -12,8 +12,8 @@ class App extends React.Component{
       userSearch : "" ,
       ListOfElement : {} , 
       theState : false ,
-      fav:[] ,
-     cal : []
+      fav :[] ,
+      cal : []
     }
 
   }
@@ -27,6 +27,7 @@ class App extends React.Component{
       textValue = textValue.replace(" ", "%20");
 
     }
+
 else {
    
      this.setState ({
@@ -75,8 +76,17 @@ else {
     // newArray.push(objIng)
     this.setState({ cal : clories });
     console.log(this.state.cal)
+    
+  //  let total = 0 ;
+  //  const totalCal = this.state.cal.map((cal,index )=>{
+  //    total =+cal;
+  // })
+  
+  // console.log("the total calories is "+total)
+
   }
 
+  
 
 
 // What should the component render 
@@ -85,7 +95,8 @@ render(){
 
 
    if (this.state.theState === true){
-   return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} handleCalToggle={this.handleCalToggle}/>
+   return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} 
+   handleCalToggle={this.handleCalToggle} faves={this.state.fav}/>
   }
    
 return (

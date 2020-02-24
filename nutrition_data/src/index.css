@@ -45,3 +45,19 @@ align-content : space-around;
 
 
 }
+
+.foveritAndTotal {
+
+    display: flex;
+    justify-content : center;
+    align-content : space-around;
+    margin: 5px ;
+    padding: 5px;
+}
+
+
+button{
+
+    margin: 5px ;
+    padding: 5px;
+}
