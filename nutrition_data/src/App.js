@@ -110,7 +110,7 @@ render(){
    if (this.state.theState === true){
    return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} 
    handleCalToggle={this.handleCalToggle} faves={this.state.fav}  caloris={this.state.cal}
-   handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.handleDeleteALL}/>
+   handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.props.handleDeleteALL}/>
   }
    
 return (

@@ -7,7 +7,7 @@ class printFirstElement extends React.Component{
 
     removeAll  = e => {
 
-        this.props.handleDeleteALL();
+        this.props.handleCalToggle();
        
     
        }
