@@ -4,6 +4,16 @@ import Foverit from './foverit';
 import Calories from './calories'
 class printFirstElement extends React.Component{
 
+
+    removeAll  = e => {
+
+        this.props.handleDeleteALL();
+       
+    
+       }
+
+
+
   
 render(){
 
@@ -11,17 +21,16 @@ render(){
     let theFoveritElement = ""
     let allItem = ""
     let total = 0
+    let  imgUrl = ""
 
     if(this.props.fovoritListClick === true){
          console.log("fhgfgfhvgc")
-
+         imgUrl = require('../src/removeAll.png')
          theFoveritElement = this.props.favorit.map((theElment,index)=>{
             console.log("inside return ")
             console.log(theElment)
             return ( <Foverit firstElementArray={theElment}  key={index}  handleDeleteToggle={this.props.handleDeleteToggle} />)
          })
-
-    
 
     }
 
@@ -40,15 +49,12 @@ render(){
 
 
     else {
-                         allItem = this.props.firstElement.map((first,index )=>{
+        allItem = this.props.firstElement.map((first,index )=>{
 
          return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} handleCalToggle={this.props.handleCalToggle} />)
     })
        
      }
-
-
-     
 
 
 
@@ -63,9 +69,9 @@ render(){
 
     return (
         <div>
-           
-
-            <div className="contener">
+            <img onClick={() => this.removeAll()} src={imgUrl}/>
+             
+            <div  className="contener">
             {theFirstElement}
           
             </div>

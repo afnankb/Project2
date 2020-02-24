@@ -51,7 +51,7 @@ render(){
  <PrintFirstElement  firstElement={this.props.ListOfElement.hints} handleFaveToggle={this.props.handleFaveToggle} 
  handleCalToggle={this.props.handleCalToggle} fovoritListClick={this.state.fovoritListClick}
  favorit={this.props.faves} caloris={this.props.caloris} calorisListClick={this.state.calorisListClick} 
- handleDeleteToggle={this.props.handleDeleteToggle}/>
+ handleDeleteToggle={this.props.handleDeleteToggle} handleDeleteALL={this.props.handleDeleteALL}/>
 
 </div>
   )
