@@ -77,12 +77,21 @@ else {
     this.setState({ cal : clories });
     console.log(this.state.cal)
     
-  
-
   }
 
-  
 
+  handleDeleteToggle = (item) => {
+    console.log("in delete ")
+  const deleteItem = [...this.state.fav];
+  const itemIndex = deleteItem.indexOf(item)
+
+  deleteItem.splice(itemIndex,1)
+   
+   this.setState ({
+           fav : deleteItem
+   })
+  
+  }
 
 // What should the component render 
 render(){
@@ -91,7 +100,8 @@ render(){
 
    if (this.state.theState === true){
    return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} 
-   handleCalToggle={this.handleCalToggle} faves={this.state.fav}  caloris={this.state.cal}/>
+   handleCalToggle={this.handleCalToggle} faves={this.state.fav}  caloris={this.state.cal}
+   handleDeleteToggle={this.handleDeleteToggle}/>
   }
    
 return (

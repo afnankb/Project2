@@ -18,7 +18,7 @@ render(){
          theFoveritElement = this.props.favorit.map((theElment,index)=>{
             console.log("inside return ")
             console.log(theElment)
-            return ( <Foverit firstElementArray={theElment}  key={index}   />)
+            return ( <Foverit firstElementArray={theElment}  key={index}  handleDeleteToggle={this.props.handleDeleteToggle} />)
          })
 
     
