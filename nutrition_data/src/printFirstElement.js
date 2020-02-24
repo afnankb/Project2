@@ -3,23 +3,26 @@ import GetFood from './GetFood';
 class printFirstElement extends React.Component{
 
   
-  
 render(){
+console.log(this.props)
 
-    const theFirstElement = this.props.firstElement.map(function(first,index){
-         return ( <GetFood firstElementArray={first.food}  key={index} />)
+    const theFirstElement = this.props.firstElement.map((first,index )=>{
+
+         return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} />)
     })
          
+
       
     
 
-console.log(this.props.firstElement)
     return (
         <div>
            
-          
+           
+
             <div className="contener">
             {theFirstElement}
+           
             </div>
          </div>
           )

@@ -12,7 +12,7 @@ class App extends React.Component{
       userSearch : "" ,
       ListOfElement : {} , 
       theState : false ,
-     
+     fav:[]
     }
 
   }
@@ -33,7 +33,7 @@ else {
       userSearch : textValue
        
      })
-      
+     
   }}
 
   Search() {
@@ -50,17 +50,30 @@ else {
       })
       .catch(function (error) {
         // handle error
-        alert(" write something to search !! ");
+        console.log(error)
+
       })
   }
 
+
+  handleFaveToggle=(food)=>{
+    const faves = [...this.state.fav];
+     console.log('the elment ',food)
+    faves.push(food);
+    // let newArray=[]
+    // newArray.push(objIng)
+    this.setState({ faves :faves });
+    
+
+  }
 // What should the component render 
 render(){
   
 
 
    if (this.state.theState === true){
-   return <ElementList  ListOfElement={this.state.ListOfElement}/>}
+   return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle}/>
+  }
    
 return (
   <div>

@@ -12,8 +12,8 @@ render(){
   return (
 <div>
     
-  
- <PrintFirstElement  firstElement={this.props.ListOfElement.hints} />
+
+ <PrintFirstElement  firstElement={this.props.ListOfElement.hints} handleFaveToggle={this.props.handleFaveToggle}   />
 
 </div>
   )
