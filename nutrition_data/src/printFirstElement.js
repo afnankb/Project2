@@ -22,6 +22,8 @@ render(){
     let allItem = ""
     let total = 0
     let  imgUrl = ""
+    let finalTotal = ""
+    let theString = ""
 
     if(this.props.fovoritListClick === true){
         //  console.log("fhgfgfhvgc")
@@ -42,11 +44,13 @@ render(){
         total = this.props.caloris.reduce((firstNumber , secondNumber)=> firstNumber+secondNumber)
         theCaloriesElement = this.props.calories.map((theElment,index)=>{
             
-            return  (<Calories  TheCalories={total} firstElementArray={theElment} key={index}  />)
+            return  (<Calories   firstElementArray={theElment} key={index}  />)
             
          })
         
      }
+
+     
 
 
 
@@ -67,6 +71,8 @@ render(){
      }
      else if (this.props.calorisListClick === true){
         theFirstElement = theCaloriesElement
+        finalTotal = total 
+        theString = "your calories for today are :"
      }
      else {
         theFirstElement = allItem
@@ -76,11 +82,14 @@ render(){
 
     return (
         <div>
+
             <img onClick={() => this.removeAll()} src={imgUrl}/>
-             
+            <h3>{theString}</h3>
+            <h3>{finalTotal}</h3>
+                
             <div  className="contener">
             {theFirstElement}
-          
+             
             </div>
                    
          </div>

@@ -10,7 +10,7 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state ={
-      userSearch : "" ,
+      userSearch : "",
       ListOfElement :[] , 
       theState : false ,
       fav :[] ,
@@ -137,7 +137,7 @@ return (
       <h2> Search to know the calories of the food </h2> 
       </div>
       <div className='search'>
-      <input type="text" onChange={this.handelSearchChange}/>
+      <input type="text" onChange={this.handelSearchChange} />
       <button type="button" onClick={() => this.Search()}> Search </button>
       </div>
         {start}

@@ -1,15 +1,11 @@
 import React from 'react';
-import Printtotalcal from './printtotalcal'
+
 class calories extends React.Component{
     
   constructor(props){
 
     super(props)
-    this.state = {
-        element : this.props.firstElementArray ,
-         
-    }
-
+  
    }
 render(){
 
@@ -17,12 +13,12 @@ render(){
     
     return ( <div>
       
-      <Printtotalcal  TheCalories={this.props.TheCalories}/>
+     
         
      <div className="element"> 
-    <p> name : {this.state.element.label}</p>   
-    <p> brand : {this.state.element.brand}</p>
-    <p> cal : {this.state.element.nutrients.ENERC_KCAL} </p>
+    <p> name : {this.props.firstElementArray.label}</p>   
+    <p> brand : {this.props.firstElementArray.brand}</p>
+    <p> cal : {this.props.firstElementArray.nutrients.ENERC_KCAL} </p>
     
     </div>
 
