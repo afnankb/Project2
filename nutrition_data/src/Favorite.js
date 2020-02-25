@@ -1,6 +1,6 @@
 import React from 'react';
 
-class foverit extends React.Component{
+class favorite extends React.Component{
     constructor(props){
 
         super(props)
@@ -10,7 +10,7 @@ class foverit extends React.Component{
         }
 
        }
-
+        // delete this element by index
        deleteFav () {
          console.log(" click delete ")
         this.props.handleDeleteToggle(this.props.TheIndex);
@@ -18,11 +18,9 @@ class foverit extends React.Component{
           
        }
 
-
+  
        changeImg(){
-
         this.props.handleAddChecked(this.props.TheIndex)
-         
           this.setState ({
             click : true
           })
@@ -31,6 +29,7 @@ class foverit extends React.Component{
 
   
 render(){
+
     let iconURL = require('../src/notChecked.png');
 
     if(this.state.click === true){
@@ -46,15 +45,16 @@ render(){
     
     
    <div className="fovoritImg">
+
       <img src={require('../src/after.png')}/>
       <img onClick={() => this.deleteFav()} src={require('../src/delete.png')}/>
       <img onClick={() => this.changeImg()} src={iconURL}/>
       </div>
       </div>
-      <br/>
+      
   </div>
    )}
  }
             
-        export default foverit;
+        export default favorite;
         

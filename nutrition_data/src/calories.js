@@ -1,6 +1,6 @@
 import React from 'react';
 
-class calories extends React.Component{
+class Calories extends React.Component{
     
   constructor(props){
 
@@ -14,9 +14,8 @@ class calories extends React.Component{
    }
 
 
-
+  // to edit Calories if the user change it 
    handelInputhange = (e) => {
-
     let textValue = e.target.value;
     let valuInt = parseInt(textValue)
     this.props.handleChangeCal(valuInt)
@@ -34,10 +33,10 @@ class calories extends React.Component{
 render(){
 
       
-    
     return ( <div>
         
      <div className="element"> 
+     
     <p> name : {this.props.firstElementArray.label}</p>   
     <p> brand : {this.props.firstElementArray.brand}</p>
     <p> cal :  </p>   <input type="text"  onChange={this.handelInputhange} value={this.state.calVal} />
@@ -49,4 +48,4 @@ render(){
    )}}
           
         
-     export default calories;
+     export default Calories;

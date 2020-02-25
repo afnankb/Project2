@@ -1,21 +1,18 @@
 import React from 'react';
-import GetFood from './GetFood';
-import Foverit from './foverit';
-import Calories from './calories'
+import PrintInformition from './PrintInformition';
+import Favorite from './Favorite';
+import Calories from './Calories'
 class printElement extends React.Component{
 
-
+   // when click remove All button 
     removeAll  = e => {
        console.log("clicked")
         this.props.handleDeleteALL();
-       
        }
 
-
+ // when click remove one element button 
        removeChecked = e => {
-          
          this.props.deleteChicketFav()
-
        }
   
 render(){
@@ -30,6 +27,8 @@ render(){
     let theString = ""
     let deleteImg = ""
 
+
+    // if clicked display favorite list 
     if(this.props.fovoritListClick === true){
        
          imgUrl = require('../src/removeAll.png')
@@ -37,11 +36,13 @@ render(){
           
          theFoveritElement = this.props.favorit.map((theElment,index)=>{
            
-            return ( <Foverit firstElementArray={theElment}  key={index} TheIndex={index}  handleDeleteToggle={this.props.handleDeleteToggle}
+            return ( <Favorite firstElementArray={theElment}  key={index} TheIndex={index}  handleDeleteToggle={this.props.handleDeleteToggle}
                handleAddChecked={this.props.handleAddChecked} />)
          })
 
     }
+
+    // if clicked display Calories list 
     
     else if (this.props.calorisListClick === true){
       
@@ -58,13 +59,13 @@ render(){
     else {
         allItem = this.props.firstElement.map((first,index )=>{
 
-         return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} handleCalToggle={this.props.handleCalToggle} 
+         return ( <PrintInformition firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} handleCalToggle={this.props.handleCalToggle} 
             handleChangeCal={this.props.handleChangeCal} />)
     })
        
      }
 
-
+    // to select what array will call it 
      if (this.props.fovoritListClick === true) {
         theFirstElement = theFoveritElement
      }
@@ -85,10 +86,11 @@ render(){
             <img onClick={() => this.removeAll()} src={imgUrl}/>
             <img onClick={() => this.removeChecked()} src={deleteImg}/>
 
-            <h3>{theString}</h3>
-            <h3>{finalTotal}</h3>
+            <p>{theString}</p>
+            <p>{finalTotal}</p>
                 
             <div  className="contener">
+
             {theFirstElement}
              
             </div>

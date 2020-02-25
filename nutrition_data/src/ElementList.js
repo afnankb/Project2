@@ -3,7 +3,6 @@ import PrintElement from './printElement';
 
 class ElementList extends React.Component{
 
- 
 constructor(props){
 super(props)
 this.state ={
@@ -12,8 +11,7 @@ this.state ={
 }
 
 }
-
-
+// to check if favorite list button clicked 
   clickFoveritList(){
 
    this.setState({
@@ -23,7 +21,7 @@ this.state ={
    })
 
   }
-
+// to check if Calories list button clicked 
   clickcalorisList(){
 
     this.setState({
@@ -36,16 +34,15 @@ this.state ={
   }
 
 
-
 render(){
 
-   
-   
+    
   return (
 <div>
+
     <div className='foveritAndTotal'>
-<button type="button" onClick={() => this.clickFoveritList()} > foverit list  </button>
-<button type="button" onClick={() => this.clickcalorisList()}  > total calorus </button>  
+<button type="button" onClick={() => this.clickFoveritList()} > favorite list  </button>
+<button type="button" onClick={() => this.clickcalorisList()}  > Calories list </button>  
 </div>
 
  <PrintElement  firstElement={this.props.ListOfElement.hints} handleFaveToggle={this.props.handleFaveToggle} 
@@ -56,9 +53,9 @@ render(){
   handleChangeCal={this.props.handleChangeCal}/>
 
 </div>
+
   )
   }
-
 }
 
 export default ElementList;

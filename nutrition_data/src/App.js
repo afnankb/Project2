@@ -3,25 +3,29 @@ import React from 'react';
 import axios from 'axios';
 import ElementList from './ElementList';
 
-
 // Define our App component calss
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      // to save what the user search about 
       userSearch: "",
+      // save the axios respons
       ListOfElement: [],
+      // to check if the user search or not 
       theState: false,
+      // array of favorite
       fav: [],
+      // array of Calories
       cal: [0, 0],
+      // array of Calorie element 
       calories: [] ,
+      // array of checked to remove 
       checkDelete : []
     }
 
   }
-
-
 
 
   handelSearchChange = (e) => {
@@ -29,7 +33,7 @@ class App extends React.Component {
     let textValue = e.target.value;
 
     if (textValue.includes(" ")) {
-
+      // becouse in this API if search about more than one word must contain %20 betwwen it  
       textValue = textValue.replace(" ", "%20");
 
     }
@@ -69,7 +73,7 @@ class App extends React.Component {
       })
   }
 
-
+ //  add to favorite list 
   handleFaveToggle = (food) => {
     const faves = [...this.state.fav];
 
@@ -80,10 +84,9 @@ class App extends React.Component {
   }
 
 
-
+//  add to Calories list 
   handleCalToggle = ( food) => {
     
-
     const thecalories = [...this.state.calories];
     thecalories.push(food);
 
@@ -105,11 +108,9 @@ class App extends React.Component {
       
     });
 
-
-
   }
 
-
+// delete element 
   handleDeleteToggle = (TheIndex) => {
 
     const deleteItem = [this.state.fav];
@@ -124,8 +125,7 @@ class App extends React.Component {
 
   }
 
-
-
+// delete All
   handleDeleteALL = () => {
 
     this.setState({
@@ -134,6 +134,7 @@ class App extends React.Component {
 
   }
 
+  // add checked element to delete it 
   handleAddChecked = (TheIndex) => {
 
     const elmentChicked = [...this.state.checkDelete];
@@ -147,7 +148,7 @@ class App extends React.Component {
 
   }
 
-
+ // delete checked element 
   deleteChicketFav = () => {
 
       const deleteElment = [this.state.checkDelete];
@@ -165,10 +166,7 @@ class App extends React.Component {
   }
 
 
-
-  // What should the component render 
   render() {
-
 
     let start;
     if (this.state.theState === true) {
@@ -183,7 +181,7 @@ class App extends React.Component {
       <div>
 
         <div className='startText'>
-          <h2> Search to know the calories of the food </h2>
+          <p> Check the calories , Just type the name below </p>
         </div>
         <div className='search'>
           <input type="text" onChange={this.handelSearchChange} />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class GetFood extends React.Component{
+class PrintInformition extends React.Component{
 
    constructor(props){
 
@@ -8,13 +8,13 @@ class GetFood extends React.Component{
     this.state = {
         element : this.props.firstElementArray ,
         state : false ,
+        stateIMGForCal : false 
     }
 
    }
 
-
+ // add element to favorite array 
    addToFovorit  = e => {
-
     this.props.handleFaveToggle(this.state.element);
    this.setState({
     state : true 
@@ -22,22 +22,30 @@ class GetFood extends React.Component{
 
    }
 
+   // add element to Calories array 
    addToCal  = e => {
 
     this.props.handleCalToggle(this.state.element);
     this.props.handleChangeCal(this.state.element.nutrients.ENERC_KCAL);
+    this.setState({
+      stateIMGForCal : true 
+    })
 
    }
 
 render(){
 
   let iconURL = require('../src/before.png');
-
+  let iconCAL = require('../src/kcal.png') ;
   if(this.state.state === true){
       iconURL = require('../src/after.png');
   }
+  if(this.state.stateIMGForCal === true){
+    iconCAL = require('../src/afterkcal.png');
+}
+   
 
-     
+
     return (
         <div>
 
@@ -48,17 +56,16 @@ render(){
            
           <div className="fovoritImg">
              <img onClick={() => this.addToFovorit()} src={iconURL}/>
-             <img  onClick={() => this.addToCal()} src={require('../src/kcal.png')}/>
-             </div>
-             </div>
-             <br/>
-             
+             <img  onClick={() => this.addToCal()} src={iconCAL}/>
 
+             </div>
+             </div>
+           
          </div>
           )
           }
         
         }
         
-        export default GetFood;
+        export default PrintInformition;
      
