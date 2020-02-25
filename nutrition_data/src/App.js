@@ -119,7 +119,7 @@ console.log("start")
    if (this.state.theState === true){
     start =  <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} 
    handleCalToggle={this.handleCalToggle} faves={this.state.fav}  caloris={this.state.cal}
-   handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.props.handleDeleteALL}/>
+   handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.handleDeleteALL}/>
   }
    
 return (
