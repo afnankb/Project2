@@ -29,7 +29,8 @@ render(){
          theFoveritElement = this.props.favorit.map((theElment,index)=>{
             console.log("inside return ")
             console.log(theElment)
-            return ( <Foverit firstElementArray={theElment}  key={index}  handleDeleteToggle={this.props.handleDeleteToggle} />)
+            // console.log("the index "+index)
+            return ( <Foverit firstElementArray={theElment}  key={index} TheIndex={index}  handleDeleteToggle={this.props.handleDeleteToggle} />)
          })
 
     }
@@ -51,7 +52,8 @@ render(){
     else {
         allItem = this.props.firstElement.map((first,index )=>{
 
-         return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} handleCalToggle={this.props.handleCalToggle} />)
+         return ( <GetFood firstElementArray={first.food}  key={index}  handleFaveToggle={this.props.handleFaveToggle} handleCalToggle={this.props.handleCalToggle} 
+         />)
     })
        
      }

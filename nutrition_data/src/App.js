@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import ElementList from './ElementList';
 
+
 // Define our App component calss
 class App extends React.Component{
 
@@ -10,7 +11,7 @@ class App extends React.Component{
     super(props);
     this.state ={
       userSearch : "" ,
-      ListOfElement : {} , 
+      ListOfElement :[] , 
       theState : false ,
       fav :[] ,
       cal : []
@@ -39,14 +40,22 @@ else {
   }}
 
   Search() {
+    this.setState({
+      theState : false ,
+     
+      
+    })
     axios.get(`https://api.edamam.com/api/food-database/parser?nutrition-type=logging&app_id=865851b7&app_key=5c70970d448fba3e868462bea11f3476&ingr=${this.state.userSearch}`)
       .then(res => {
 
         console.log(res.data)
         // console.log(res.data.parsed[0].food.nutrients.ENERC_KCAL)
+
         this.setState({
-          ListOfElement : res.data ,
+          ListOfElement: res.data ,
           theState : true ,
+         
+          
         })
        
       })
@@ -80,10 +89,10 @@ else {
   }
 
 
-  handleDeleteToggle = (item) => {
+  handleDeleteToggle = (item , Index ) => {
     console.log("in delete ")
-  const deleteItem = [...this.state.fav];
-  const itemIndex = deleteItem.indexOf(item)
+  const deleteItem = [this.state.fav];
+  const itemIndex = Index ;
 
   deleteItem.splice(itemIndex,1)
    
@@ -105,20 +114,25 @@ else {
 // What should the component render 
 render(){
   
-
-
+console.log("start")
+ let start ;
    if (this.state.theState === true){
-   return <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} 
+    start =  <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle} 
    handleCalToggle={this.handleCalToggle} faves={this.state.fav}  caloris={this.state.cal}
    handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.handleDeleteALL}/>
   }
    
 return (
   <div>
+     
+    <div className='startText'> 
       <h2> Search to know the calories of the food </h2> 
+      </div>
+      <div className='search'>
       <input type="text" onChange={this.handelSearchChange}/>
       <button type="button" onClick={() => this.Search()}> Search </button>
-        
+      </div>
+        {start}
       </div>
 )
 }

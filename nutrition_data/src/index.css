@@ -1,7 +1,7 @@
 input {
 
 border: 1px solid black;
-
+width: 200px;
 }
 
 
@@ -60,4 +60,24 @@ button{
 
     margin: 5px ;
     padding: 5px;
+}
+
+
+.search{
+
+    display: flex;
+    justify-content : center;
+
+}
+
+.startText{
+
+    display: flex;
+    justify-content : center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.search button {
+    width: 80px;
+    
 }

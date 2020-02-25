@@ -14,7 +14,7 @@ class foverit extends React.Component{
 
        deleteFav  = e => {
          
-        this.props.handleDeleteToggle(this.state.element);
+        this.props.handleDeleteToggle(this.state.element,this.props.Index);
          console.log(this.state.element)
     
        }

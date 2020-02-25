@@ -47,6 +47,7 @@ render(){
   if(this.state.state === true){
       iconURL = require('../src/after.png');
   }
+
      
     return (
         <div>
