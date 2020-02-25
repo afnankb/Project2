@@ -7,22 +7,17 @@ class foverit extends React.Component{
     
        }
 
-
        deleteFav () {
          console.log(" click delete ")
         this.props.handleDeleteToggle(this.props.TheIndex);
          console.log(this.props.TheIndexx)
-        
-           
+          
        }
-
-
 
   
 render(){
 
       
-    
     return ( <div>
 
     <div className="element"> 
@@ -39,10 +34,8 @@ render(){
       </div>
       <br/>
   </div>
-   )
-          }
-        
-        }
-        
+   )}
+ }
+            
         export default foverit;
         

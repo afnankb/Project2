@@ -2,7 +2,7 @@ import React from 'react';
 import GetFood from './GetFood';
 import Foverit from './foverit';
 import Calories from './calories'
-class printFirstElement extends React.Component{
+class printElement extends React.Component{
 
 
     removeAll  = e => {
@@ -10,8 +10,6 @@ class printFirstElement extends React.Component{
         this.props.handleDeleteALL();
        
        }
-
-
 
   
 render(){
@@ -26,21 +24,17 @@ render(){
     let theString = ""
 
     if(this.props.fovoritListClick === true){
-        //  console.log("fhgfgfhvgc")
+       
          imgUrl = require('../src/removeAll.png')
          theFoveritElement = this.props.favorit.map((theElment,index)=>{
-            // console.log("inside return ")
-            // console.log(theElment)
-            // console.log("the index "+index)
+           
             return ( <Foverit firstElementArray={theElment}  key={index} TheIndex={index}  handleDeleteToggle={this.props.handleDeleteToggle} />)
          })
 
     }
     
-
-
     else if (this.props.calorisListClick === true){
-        // console.log("first "+total)
+      
         total = this.props.caloris.reduce((firstNumber , secondNumber)=> firstNumber+secondNumber)
         theCaloriesElement = this.props.calories.map((theElment,index)=>{
             
@@ -49,10 +43,6 @@ render(){
          })
         
      }
-
-     
-
-
 
 
     else {
@@ -63,7 +53,6 @@ render(){
     })
        
      }
-
 
 
      if (this.props.fovoritListClick === true) {
@@ -98,5 +87,5 @@ render(){
         
         }
         
-        export default printFirstElement;
+        export default printElement;
         
