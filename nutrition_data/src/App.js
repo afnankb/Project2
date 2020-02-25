@@ -15,10 +15,14 @@ class App extends React.Component {
       theState: false,
       fav: [],
       cal: [0, 0],
-      calories: []
+      calories: [] ,
+      checkDelete : []
     }
 
   }
+
+
+
 
   handelSearchChange = (e) => {
 
@@ -117,6 +121,38 @@ class App extends React.Component {
 
   }
 
+  handleAddChecked = (TheIndex) => {
+
+    const elmentChicked = [...this.state.checkDelete];
+
+    elmentChicked.push(TheIndex);
+
+    this.setState({
+      checkDelete : elmentChicked 
+    })
+
+
+  }
+
+
+  deleteChicketFav = () => {
+
+      const deleteElment = [this.state.checkDelete];
+      const  arrayFav = [this.state.fav];
+      let item = arrayFav[0];
+      for (let i=0 ; i<= deleteElment.length ; i++){
+        item.splice(deleteElment[i], 1)
+ 
+      }
+
+    this.setState({
+      fav : item ,
+      checkDelete : []
+    })
+  }
+
+
+
   // What should the component render 
   render() {
 
@@ -126,7 +162,7 @@ class App extends React.Component {
       start = <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle}
         handleCalToggle={this.handleCalToggle} faves={this.state.fav} caloris={this.state.cal}
         handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.handleDeleteALL}
-        calories={this.state.calories} />
+        calories={this.state.calories} handleAddChecked={this.handleAddChecked} deleteChicketFav={this.deleteChicketFav}/>
     }
 
     return (

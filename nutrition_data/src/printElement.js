@@ -11,6 +11,12 @@ class printElement extends React.Component{
        
        }
 
+
+       removeChecked = e => {
+          
+         this.props.deleteChicketFav()
+
+       }
   
 render(){
 
@@ -22,13 +28,17 @@ render(){
     let  imgUrl = ""
     let finalTotal = ""
     let theString = ""
+    let deleteImg = ""
 
     if(this.props.fovoritListClick === true){
        
          imgUrl = require('../src/removeAll.png')
+        deleteImg  = require('../src/DeleteIcon.png')
+          
          theFoveritElement = this.props.favorit.map((theElment,index)=>{
            
-            return ( <Foverit firstElementArray={theElment}  key={index} TheIndex={index}  handleDeleteToggle={this.props.handleDeleteToggle} />)
+            return ( <Foverit firstElementArray={theElment}  key={index} TheIndex={index}  handleDeleteToggle={this.props.handleDeleteToggle}
+               handleAddChecked={this.props.handleAddChecked} />)
          })
 
     }
@@ -73,6 +83,8 @@ render(){
         <div>
 
             <img onClick={() => this.removeAll()} src={imgUrl}/>
+            <img onClick={() => this.removeChecked()} src={deleteImg}/>
+
             <h3>{theString}</h3>
             <h3>{finalTotal}</h3>
                 

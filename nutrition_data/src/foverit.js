@@ -4,7 +4,11 @@ class foverit extends React.Component{
     constructor(props){
 
         super(props)
-    
+         
+        this.state = {
+            click : false 
+        }
+
        }
 
        deleteFav () {
@@ -14,9 +18,24 @@ class foverit extends React.Component{
           
        }
 
+
+       changeImg(){
+
+        this.props.handleAddChecked(this.props.TheIndex)
+         
+          this.setState ({
+            click : true
+          })
+
+       }
+
   
 render(){
+    let iconURL = require('../src/notChecked.png');
 
+    if(this.state.click === true){
+        iconURL = require('../src/checked.png');
+    }
       
     return ( <div>
 
@@ -29,7 +48,7 @@ render(){
    <div className="fovoritImg">
       <img src={require('../src/after.png')}/>
       <img onClick={() => this.deleteFav()} src={require('../src/delete.png')}/>
-     
+      <img onClick={() => this.changeImg()} src={iconURL}/>
       </div>
       </div>
       <br/>
