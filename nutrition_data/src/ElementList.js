@@ -53,6 +53,7 @@ render(){
  handleCalToggle={this.props.handleCalToggle} fovoritListClick={this.state.fovoritListClick}
  favorit={this.props.faves} caloris={this.props.caloris} calorisListClick={this.state.calorisListClick} 
  handleDeleteToggle={this.props.handleDeleteToggle} handleDeleteALL={this.props.handleDeleteALL}
+  calories={this.props.calories}
  />
 
 </div>

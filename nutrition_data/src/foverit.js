@@ -6,17 +6,18 @@ class foverit extends React.Component{
         super(props)
         this.state = {
             element : this.props.firstElementArray ,
-             
+             index : this.props.TheIndex
         }
     
        }
 
 
-       deleteFav  = e => {
-         
-        this.props.handleDeleteToggle(this.state.element,this.props.Index);
-         console.log(this.state.element)
-    
+       deleteFav () {
+         console.log(" click delete ")
+        this.props.handleDeleteToggle(this.state.index);
+         console.log(this.state.TheIndex)
+        
+           
        }
 
 

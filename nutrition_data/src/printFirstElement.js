@@ -6,10 +6,9 @@ class printFirstElement extends React.Component{
 
 
     removeAll  = e => {
-
-        this.props.handleCalToggle();
+       console.log("clicked")
+        this.props.handleDeleteALL();
        
-    
        }
 
 
@@ -19,31 +18,34 @@ render(){
 
     let theFirstElement = ""
     let theFoveritElement = ""
+    let theCaloriesElement = ""
     let allItem = ""
     let total = 0
     let  imgUrl = ""
 
     if(this.props.fovoritListClick === true){
-         console.log("fhgfgfhvgc")
+        //  console.log("fhgfgfhvgc")
          imgUrl = require('../src/removeAll.png')
          theFoveritElement = this.props.favorit.map((theElment,index)=>{
-            console.log("inside return ")
-            console.log(theElment)
+            // console.log("inside return ")
+            // console.log(theElment)
             // console.log("the index "+index)
             return ( <Foverit firstElementArray={theElment}  key={index} TheIndex={index}  handleDeleteToggle={this.props.handleDeleteToggle} />)
          })
 
     }
-
+    
 
 
     else if (this.props.calorisListClick === true){
-        console.log("first "+total)
+        // console.log("first "+total)
         total = this.props.caloris.reduce((firstNumber , secondNumber)=> firstNumber+secondNumber)
-    
-        console.log("last "+total)
-
-              return  (<Calories  TheCalories={total}/>)
+        theCaloriesElement = this.props.calories.map((theElment,index)=>{
+            
+            return  (<Calories  TheCalories={total} firstElementArray={theElment} key={index}  />)
+            
+         })
+        
      }
 
 
@@ -62,6 +64,9 @@ render(){
 
      if (this.props.fovoritListClick === true) {
         theFirstElement = theFoveritElement
+     }
+     else if (this.props.calorisListClick === true){
+        theFirstElement = theCaloriesElement
      }
      else {
         theFirstElement = allItem

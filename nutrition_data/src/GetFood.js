@@ -28,7 +28,7 @@ class GetFood extends React.Component{
 
    addToCal  = e => {
 
-    this.props.handleCalToggle(this.state.element.nutrients.ENERC_KCAL);
+    this.props.handleCalToggle(this.state.element.nutrients.ENERC_KCAL , this.state.element);
    
 
    }
@@ -40,7 +40,7 @@ class GetFood extends React.Component{
 
 render(){
 
-     console.log("inside get "+this.props.firstElementArray.label)
+    //  console.log("inside get "+this.props.firstElementArray.label)
   // console.log()
   let iconURL = require('../src/before.png');
 
