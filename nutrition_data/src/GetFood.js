@@ -24,8 +24,8 @@ class GetFood extends React.Component{
 
    addToCal  = e => {
 
-    this.props.handleCalToggle(this.state.element.nutrients.ENERC_KCAL , this.state.element);
-   
+    this.props.handleCalToggle(this.state.element);
+    this.props.handleChangeCal(this.state.element.nutrients.ENERC_KCAL);
 
    }
 

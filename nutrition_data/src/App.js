@@ -81,17 +81,30 @@ class App extends React.Component {
 
 
 
-  handleCalToggle = (calo, food) => {
-    const clories = [...this.state.cal];
+  handleCalToggle = ( food) => {
+    
 
-    clories.push(calo);
     const thecalories = [...this.state.calories];
     thecalories.push(food);
 
     this.setState({
-      cal: clories,
+      
       calories: thecalories
     });
+
+
+  }
+
+  handleChangeCal = (calo) => {
+
+    const clories = [...this.state.cal];
+    clories.push(calo);
+
+    this.setState({
+      cal: clories,
+      
+    });
+
 
 
   }
@@ -162,7 +175,8 @@ class App extends React.Component {
       start = <ElementList ListOfElement={this.state.ListOfElement} handleFaveToggle={this.handleFaveToggle}
         handleCalToggle={this.handleCalToggle} faves={this.state.fav} caloris={this.state.cal}
         handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.handleDeleteALL}
-        calories={this.state.calories} handleAddChecked={this.handleAddChecked} deleteChicketFav={this.deleteChicketFav}/>
+        calories={this.state.calories} handleAddChecked={this.handleAddChecked} deleteChicketFav={this.deleteChicketFav}
+        handleChangeCal={this.handleChangeCal}/>
     }
 
     return (
