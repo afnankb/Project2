@@ -10,7 +10,7 @@
 - java script .
 - css .
 - java script .
-- boostrap .
+- Bootstrap .
 
 ## user stories
 
