@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Project2/static/css/main.d3732e77.chunk.css",
+    "main.js": "/Project2/static/js/main.c30f82be.chunk.js",
+    "main.js.map": "/Project2/static/js/main.c30f82be.chunk.js.map",
+    "runtime-main.js": "/Project2/static/js/runtime-main.3d54f79e.js",
+    "runtime-main.js.map": "/Project2/static/js/runtime-main.3d54f79e.js.map",
+    "static/css/2.67123b20.chunk.css": "/Project2/static/css/2.67123b20.chunk.css",
+    "static/js/2.30a83952.chunk.js": "/Project2/static/js/2.30a83952.chunk.js",
+    "static/js/2.30a83952.chunk.js.map": "/Project2/static/js/2.30a83952.chunk.js.map",
+    "index.html": "/Project2/index.html",
+    "precache-manifest.98602793907fdb2e8e29ac7a22fdf37b.js": "/Project2/precache-manifest.98602793907fdb2e8e29ac7a22fdf37b.js",
+    "service-worker.js": "/Project2/service-worker.js",
+    "static/css/2.67123b20.chunk.css.map": "/Project2/static/css/2.67123b20.chunk.css.map",
+    "static/css/main.d3732e77.chunk.css.map": "/Project2/static/css/main.d3732e77.chunk.css.map",
+    "static/js/2.30a83952.chunk.js.LICENSE.txt": "/Project2/static/js/2.30a83952.chunk.js.LICENSE.txt",
+    "static/media/DeleteIcon.png": "/Project2/static/media/DeleteIcon.c8c71db6.png",
+    "static/media/after.png": "/Project2/static/media/after.4f4696c7.png",
+    "static/media/afterkcal.png": "/Project2/static/media/afterkcal.d24fe457.png",
+    "static/media/before.png": "/Project2/static/media/before.df67225a.png",
+    "static/media/kcal.png": "/Project2/static/media/kcal.7f6b3f1c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d54f79e.js",
+    "static/css/2.67123b20.chunk.css",
+    "static/js/2.30a83952.chunk.js",
+    "static/css/main.d3732e77.chunk.css",
+    "static/js/main.c30f82be.chunk.js"
+  ]
+}
