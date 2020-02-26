@@ -49,7 +49,7 @@ render(){
         total = this.props.caloris.reduce((firstNumber , secondNumber)=> firstNumber+secondNumber)
         theCaloriesElement = this.props.calories.map((theElment,index)=>{
             
-            return  (<Calories   firstElementArray={theElment} key={index}  handleCalToggle={this.props.handleCalToggle}  handleChangeCal={this.props.handleChangeCal} />)
+            return  (<Calories   firstElementArray={theElment} key={index} TheIndex={index} deletCal={this.props.deletCal} handleCalToggle={this.props.handleCalToggle}  handleChangeCal={this.props.handleChangeCal} />)
             
          })
         

@@ -34,6 +34,8 @@ this.state ={
   }
 
 
+
+
 render(){
 
     
@@ -56,7 +58,7 @@ render(){
  favorit={this.props.faves} caloris={this.props.caloris} calorisListClick={this.state.calorisListClick} 
  handleDeleteToggle={this.props.handleDeleteToggle} handleDeleteALL={this.props.handleDeleteALL}
   calories={this.props.calories} handleAddChecked={this.props.handleAddChecked} deleteChicketFav={this.props.deleteChicketFav}
-  handleChangeCal={this.props.handleChangeCal}/>
+  handleChangeCal={this.props.handleChangeCal} deletCal={this.props.deletCal}/>
 
 </div>
 

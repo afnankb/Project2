@@ -19,7 +19,7 @@ class App extends React.Component {
       // array of favorite
       fav: [],
       // array of Calories
-      cal: [0, 0],
+      cal: [],
       // array of Calorie element 
       calories: [] ,
       // array of checked to remove 
@@ -167,6 +167,20 @@ class App extends React.Component {
   }
 
 
+  deletCal = (TheIndex) => {
+    console.log("the calories"+TheIndex)
+ const theArray = this.state.cal;
+ 
+ console.log("the index "+TheIndex)
+ theArray.splice(TheIndex, 1);
+
+this.setState({
+   cal : theArray 
+})
+
+  }
+
+
   render() {
 
     let start;
@@ -175,7 +189,7 @@ class App extends React.Component {
         handleCalToggle={this.handleCalToggle} faves={this.state.fav} caloris={this.state.cal}
         handleDeleteToggle={this.handleDeleteToggle} handleDeleteALL={this.handleDeleteALL}
         calories={this.state.calories} handleAddChecked={this.handleAddChecked} deleteChicketFav={this.deleteChicketFav}
-        handleChangeCal={this.handleChangeCal}/>
+        handleChangeCal={this.handleChangeCal} deletCal={this.deletCal}/>
     }
 
     return (

@@ -7,7 +7,8 @@ class Calories extends React.Component{
     super(props)
     this.state = {
 
-      calVal : this.props.firstElementArray.nutrients.ENERC_KCAL
+      calVal : this.props.firstElementArray.nutrients.ENERC_KCAL , 
+      newCal : this.props.firstElementArray.nutrients.ENERC_KCAL
 
     }
   
@@ -16,18 +17,27 @@ class Calories extends React.Component{
 
   // to edit Calories if the user change it 
    handelInputhange = (e) => {
+    
     let textValue = e.target.value;
-    if (textValue !== " " || textValue !== 0) {
+   
     let valuInt = parseInt(textValue)
-    this.props.handleChangeCal(valuInt)
+
+    
      this.setState ({
       
-      calVal  : textValue 
+      newCal  : valuInt 
 
      })
-    }
+    
    }
 
+
+   changeCal () {
+    this.props.deletCal(this.props.TheIndex)
+
+    this.props.handleChangeCal(this.state.newCal)
+
+   }
 
 
 
@@ -43,8 +53,8 @@ render(){
     <p> brand : {this.props.firstElementArray.brand}</p>
     <p> cal :  </p> 
      
-        <input class="form-control form-control" type="text"  onChange={this.handelInputhange} value={this.state.calVal} />
-      
+        <input class="form-control form-control" type="text"  onChange={this.handelInputhange} value={this.state.newCal} />
+        <button class="btn btn-light btn-sm" type="button" onClick={() => this.changeCal()}> Edit </button>
     </div>
     </div>
 
