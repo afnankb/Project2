@@ -152,10 +152,10 @@ class App extends React.Component {
  // delete checked element 
   deleteChicketFav = () => {
 
-      const deleteElment = [this.state.checkDelete];
+      const deleteElment = this.state.checkDelete;
       const  arrayFav = [this.state.fav];
       let item = arrayFav[0];
-      for (let i=0 ; i<=deleteElment.length ; i++){
+      for (let i=0 ; i<deleteElment.length ; i++){
         item.splice(deleteElment[i], 1)
  
       }
@@ -166,7 +166,7 @@ class App extends React.Component {
     })
   }
 
-
+// delete cal tp add new cal
   deletCal = (TheIndex) => {
     console.log("the calories"+TheIndex)
  const theArray = this.state.cal;
