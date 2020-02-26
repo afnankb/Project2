@@ -198,7 +198,7 @@ this.setState({
         <div className='text-center'>
           <div className="pt-5 ">
             <div className="font-italic	">
-          <p> Check the calories , Just type the name below </p>
+          <p> Check the calories , Just type the food name below </p>
           </div>
           <div class="shadow p-4 mb-4 bg-white">
           <div class="mx-auto">
