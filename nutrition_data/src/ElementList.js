@@ -13,13 +13,16 @@ this.state ={
 }
 // to check if favorite list button clicked 
   clickFoveritList(){
+    
+
+    
 
    this.setState({
     
     fovoritListClick : true
          
    })
-
+  
   }
 // to check if Calories list button clicked 
   clickcalorisList(){

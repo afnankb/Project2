@@ -45,8 +45,8 @@ render(){
     // if clicked display Calories list 
     
     else if (this.props.calorisListClick === true){
-      
-        total = this.props.caloris.reduce((firstNumber , secondNumber)=> firstNumber+secondNumber)
+         if (this.props.caloris.length !== 0) {
+        total = this.props.caloris.reduce((firstNumber , secondNumber)=> firstNumber+secondNumber)}
         theCaloriesElement = this.props.calories.map((theElment,index)=>{
             
             return  (<Calories   firstElementArray={theElment} key={index} TheIndex={index} deletCal={this.props.deletCal} handleCalToggle={this.props.handleCalToggle}  handleChangeCal={this.props.handleChangeCal} />)

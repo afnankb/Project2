@@ -22,13 +22,14 @@ class Calories extends React.Component{
    
     let valuInt = parseInt(textValue)
 
-    
+    if (valuInt !== " " || valuInt !== 0){
      this.setState ({
       
       newCal  : valuInt 
 
      })
-    
+     
+    }
    }
 
 
@@ -52,9 +53,11 @@ render(){
     <p> name : {this.props.firstElementArray.label}</p>   
     <p> brand : {this.props.firstElementArray.brand}</p>
     <p> cal :  </p> 
-     
+    <div className="EditButton">
         <input class="form-control form-control" type="text"  onChange={this.handelInputhange} value={this.state.newCal} />
+       
         <button class="btn btn-light btn-sm" type="button" onClick={() => this.changeCal()}> Edit </button>
+        </div>
     </div>
     </div>
 
