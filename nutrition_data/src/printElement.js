@@ -6,7 +6,7 @@ class printElement extends React.Component{
 
    // when click remove All button 
     removeAll  = e => {
-       console.log("clicked")
+      
         this.props.handleDeleteALL();
        }
 
@@ -72,7 +72,7 @@ render(){
      else if (this.props.calorisListClick === true){
         theFirstElement = theCaloriesElement
         finalTotal = total 
-        theString = "your calories for today are :"
+        theString = " your calories for today is :"
      }
      else {
         theFirstElement = allItem
@@ -82,15 +82,26 @@ render(){
 
     return (
         <div>
-
-            <img onClick={() => this.removeAll()} src={imgUrl}/>
-            <img onClick={() => this.removeChecked()} src={deleteImg}/>
-
+            <div className='text-center'>
+            <div class="btn-group">
+              
+            <div className="remove">
+            <img onClick={() => this.removeAll()} src={imgUrl} class="img-thumbnail"/>
+            </div>
+            <div className="remove">
+            <img onClick={() => this.removeChecked()} src={deleteImg} class="img-thumbnail"/>
+            </div>
+            
+            </div>
+            </div> 
+            <div className='text-center'>
+            <div className="font-italic">
             <p>{theString}</p>
             <p>{finalTotal}</p>
-                
-            <div  className="contener">
+            </div>
+            </div>
 
+              <div className="contener">
             {theFirstElement}
              
             </div>

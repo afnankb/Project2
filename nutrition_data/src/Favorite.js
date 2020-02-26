@@ -12,9 +12,9 @@ class favorite extends React.Component{
        }
         // delete this element by index
        deleteFav () {
-         console.log(" click delete ")
+         
         this.props.handleDeleteToggle(this.props.TheIndex);
-         console.log(this.props.TheIndexx)
+        
           
        }
 
@@ -38,7 +38,8 @@ render(){
       
     return ( <div>
 
-    <div className="element"> 
+<div class="contenerInformition ">
+           <div class="border border-light rounded-sm "> 
     <p> name : {this.props.firstElementArray.label}</p>   
     <p> brand : {this.props.firstElementArray.brand}</p>
     <p> cal : {this.props.firstElementArray.nutrients.ENERC_KCAL} </p>
@@ -51,7 +52,7 @@ render(){
       <img onClick={() => this.changeImg()} src={iconURL}/>
       </div>
       </div>
-      
+      </div>
   </div>
    )}
  }

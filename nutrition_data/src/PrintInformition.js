@@ -48,8 +48,8 @@ render(){
 
     return (
         <div>
-
-           <div className="element"> 
+           <div class="contenerInformition ">
+           <div class="border border-light rounded-sm "> 
            <p> name : {this.state.element.label}</p>   
            <p> brand : {this.state.element.brand}</p>
            <p> cal : {this.state.element.nutrients.ENERC_KCAL} </p>
@@ -57,11 +57,11 @@ render(){
           <div className="fovoritImg">
              <img onClick={() => this.addToFovorit()} src={iconURL}/>
              <img  onClick={() => this.addToCal()} src={iconCAL}/>
-
              </div>
              </div>
-           
-         </div>
+             </div>
+             </div>
+         
           )
           }
         

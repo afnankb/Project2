@@ -2,6 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import ElementList from './ElementList';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // Define our App component calss
 class App extends React.Component {
@@ -97,9 +98,9 @@ class App extends React.Component {
 
 
   }
-
+// 
   handleChangeCal = (calo) => {
-
+    if (calo !== "" || calo !== 0) {
     const clories = [...this.state.cal];
     clories.push(calo);
 
@@ -107,7 +108,7 @@ class App extends React.Component {
       cal: clories,
       
     });
-
+  }
   }
 
 // delete element 
@@ -154,7 +155,7 @@ class App extends React.Component {
       const deleteElment = [this.state.checkDelete];
       const  arrayFav = [this.state.fav];
       let item = arrayFav[0];
-      for (let i=0 ; i<= deleteElment.length ; i++){
+      for (let i=0 ; i<=deleteElment.length ; i++){
         item.splice(deleteElment[i], 1)
  
       }
@@ -178,16 +179,26 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+     
 
-        <div className='startText'>
+        <div className='text-center'>
+          <div className="pt-5 ">
+            <div className="font-italic	">
           <p> Check the calories , Just type the name below </p>
-        </div>
-        <div className='search'>
-          <input type="text" onChange={this.handelSearchChange} />
-          <button type="button" onClick={() => this.Search()}> Search </button>
-        </div>
+          </div>
+          <div class="shadow p-4 mb-4 bg-white">
+          <div class="mx-auto">
+          </div>
+          
+          <input class="form-control form-control" type="text" onChange={this.handelSearchChange} />
+        
+          <div className="buttonSerach">
+          <button class="btn btn-light btn-sm" type="button" onClick={() => this.Search()}> Search </button>
+          </div>
+          </div>
         {start}
+
+        </div>
       </div>
     )
   }

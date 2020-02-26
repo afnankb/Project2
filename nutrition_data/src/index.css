@@ -1,83 +1,48 @@
-input {
+.remove{
 
-border: 1px solid black;
-width: 200px;
+    width: 98px;
+    padding: 5px ;
 }
 
+body {
 
-img{
+    font-family: 'Lato', sans-serif;
+}
+.buttonSerach  {
 
-    width: 50px;
+padding: 4px;
 
 }
+
 
 .fovoritImg img {
 
-width: 35px;
-margin: 5px ;
-padding: 5px;
-flex-direction : row
+width: 30px;
 
 }
 
+.contenerInformition{
 
-.element{
-
- border: 1px inset gray;
     width: 200px;
-    height: 200px;
+    
     margin: 5px ;
     padding: 5px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font: 400;
-}
+    font-family: 'Lato', sans-serif;
+    font: 300;
 
+}
 
 .contener{
 
 
-display: flex;
-flex-wrap: wrap;
-justify-content : center;
-align-items: baseline;
-align-content : space-around;
-
-
-
-}
-
-.foveritAndTotal {
-
     display: flex;
+    flex-wrap: wrap;
     justify-content : center;
+    align-items: baseline;
     align-content : space-around;
-    margin: 5px ;
-    padding: 5px;
-}
-
-
-button{
-
-    margin: 5px ;
-    padding: 5px;
-}
-
-
-.search{
-
-    display: flex;
-    justify-content : center;
-
-}
-
-.startText{
-
-    display: flex;
-    justify-content : center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-}
-.search button {
-    width: 80px;
+    padding: 8px;
+   
     
-}
+    
+    
+    }

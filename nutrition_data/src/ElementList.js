@@ -39,12 +39,18 @@ render(){
     
   return (
 <div>
-
-    <div className='foveritAndTotal'>
-<button type="button" onClick={() => this.clickFoveritList()} > favorite list  </button>
-<button type="button" onClick={() => this.clickcalorisList()}  > Calories list </button>  
+<div className="text-center">
+  <div className="ml-2">
+<div class="btn-group">
+<div className="m-2 ">
+<button class="btn btn-light btn-sm" type="button" onClick={() => this.clickFoveritList()} > favorite list  </button>
 </div>
-
+<div className="m-2 ">
+<button  class="btn btn-light btn-sm" type="button" onClick={() => this.clickcalorisList()}  > Calories list </button>  
+</div>
+</div>
+</div>
+</div>
  <PrintElement  firstElement={this.props.ListOfElement.hints} handleFaveToggle={this.props.handleFaveToggle} 
  handleCalToggle={this.props.handleCalToggle} fovoritListClick={this.state.fovoritListClick}
  favorit={this.props.faves} caloris={this.props.caloris} calorisListClick={this.state.calorisListClick} 
